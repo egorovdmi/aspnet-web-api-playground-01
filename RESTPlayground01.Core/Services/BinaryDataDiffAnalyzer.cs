@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using RESTPlayground01.Core.Models;
 
 namespace RESTPlayground01.Core.Services
 {
     public class BinaryDataDiffAnalyzer : IBinaryDataDiffAnalyzer
     {
-        public BinaryDataDiffAnalyzer()
-        {
-        }
-
         public BinaryDataDiffAnalyzerResult Diff(byte[] leftSideData, byte[] rightSideData)
         {
             if (leftSideData.Length != rightSideData.Length)

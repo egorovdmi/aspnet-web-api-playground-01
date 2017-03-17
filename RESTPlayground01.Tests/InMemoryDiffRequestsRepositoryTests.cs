@@ -25,7 +25,7 @@ namespace RESTPlayground01.Tests
         {
             // arrange
             var repository = new InMemoryDiffRequestsRepository();
-            repository.Update(1, new Core.Models.DiffRequest());
+            repository.Update(1, new DiffRequest());
 
             // action
             var result = repository.Single(1);

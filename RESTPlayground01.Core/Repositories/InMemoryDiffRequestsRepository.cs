@@ -5,7 +5,7 @@ namespace RESTPlayground01.Core.Repositories
 {
     public class InMemoryDiffRequestsRepository : IDiffRequestsRepository
     {
-        private ConcurrentDictionary<int, DiffRequest> _dictionary 
+        private readonly ConcurrentDictionary<int, DiffRequest> _dictionary 
             = new ConcurrentDictionary<int, DiffRequest>();
 
         public DiffRequest Single(int id)
@@ -16,7 +16,7 @@ namespace RESTPlayground01.Core.Repositories
         public DiffRequest SingleOrDefault(int id, DiffRequest defaultEntity)
         {
             var entity = Single(id);
-            return entity != null ? entity : defaultEntity;
+            return entity ?? defaultEntity;
         }
 
         public void Update(int id, DiffRequest entity)

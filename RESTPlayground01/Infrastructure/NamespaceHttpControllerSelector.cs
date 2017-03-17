@@ -9,7 +9,7 @@ using System.Web.Http.Controllers;
 using System.Web.Http.Dispatcher;
 using System.Web.Http.Routing;
 
-namespace RESTPlayground01
+namespace RESTPlayground01.Infrastructure
 {
     public class NamespaceHttpControllerSelector : IHttpControllerSelector
     {
@@ -41,6 +41,9 @@ namespace RESTPlayground01
 
             foreach (Type t in controllerTypes)
             {
+                if (t.Namespace == null)
+                    continue;
+
                 var segments = t.Namespace.Split(Type.Delimiter);
 
                 // For the dictionary key, strip "Controller" from the end of the type name.
@@ -72,7 +75,7 @@ namespace RESTPlayground01
         // Get a value from the route data, if present.
         private static T GetRouteVariable<T>(IHttpRouteData routeData, string name)
         {
-            object result = null;
+            object result;
             if (routeData.Values.TryGetValue(name, out result))
             {
                 return (T)result;

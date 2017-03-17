@@ -1,7 +1,7 @@
 ASP.NET Web API Starter-Kit (aspnet-web-api-playground-01)
 ==========================================================
 
-Project was developed using Visual Studio 2015. 
+Project is developed using Visual Studio 2015.
 Here's a list of perks that have been used:
 
 - Namespaces versioning for controllers with the same name: 
@@ -41,15 +41,15 @@ REQUIREMENTS
 IMPORTANT!!! QUICK START
 ------------------------
 
-Visual Studio has to be started as Administrator, 
+Visual Studio has to be run as Administrator, 
 otherwise integration tests can't run.
 
 Within Visual Studio you can run:
 
-- RESTPlayground01 project. Just run the project. Will be opened a page with instructions sample.
+- RESTPlayground01 project. Just run the project. The page with instructions sample will be opened.
 - Unit and integration tests. In toolbar: Test -> Run -> All Tests. 
 
-For running integration tests you don't need to run Web API service separetly,
+Running integration tests you don't need to start Web API service separetly,
 because they run their own Self-Hosting environment.
 
 

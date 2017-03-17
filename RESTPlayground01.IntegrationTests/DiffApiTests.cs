@@ -11,7 +11,7 @@ namespace RESTPlayground01.IntegrationTests
     [TestClass]
     public class DiffApiTests
     {
-        private static int _diffUnderTestId = 0;
+        private static int _diffUnderTestId;
         private DiffsUrlHelper _urlHelper;
         private HttpClient _httpClient;
 
@@ -24,8 +24,8 @@ namespace RESTPlayground01.IntegrationTests
             // setup http client
             _httpClient = new HttpClient();
             _httpClient.BaseAddress = new Uri(string.Format("{0}:{1}", 
-                ServiceHostSetup.WEBAPI_SERVICE_BASEURL,
-                ServiceHostSetup.WEBAPI_SERVICE_PORT));
+                ServiceHostSetup.WebapiServiceBaseurl,
+                ServiceHostSetup.WebapiServicePort));
             _urlHelper = new DiffsUrlHelper("/v1");
         }
 

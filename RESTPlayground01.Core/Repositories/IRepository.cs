@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RESTPlayground01.Core.Repositories
+﻿namespace RESTPlayground01.Core.Repositories
 {
-    public interface IRepository<TKey, T>
+    public interface IRepository<in TKey, T>
     {
         /// <summary>
         /// Get object by key.
@@ -19,6 +13,7 @@ namespace RESTPlayground01.Core.Repositories
         /// Get object by key. If doesn't exist then use defaut object as returen value.
         /// </summary>
         /// <param name="id">Unique key.</param>
+        /// <param name="defaultEntity">Object that will be used if target object doesn't exist in repository.</param>
         /// <returns></returns>
         T SingleOrDefault(TKey id, T defaultEntity);
 

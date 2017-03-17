@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RESTPlayground01.IntegrationTests.Utils
+﻿namespace RESTPlayground01.IntegrationTests.Utils
 {
     public class DiffsUrlHelper : UrlHelperBase
     {
@@ -16,17 +14,17 @@ namespace RESTPlayground01.IntegrationTests.Utils
 
         internal string GetDiff(int id)
         {
-            return string.Format("{0}/diff/{1}", _baseAddress, id);
+            return string.Format("{0}/diff/{1}", BaseAddress, id);
         }
 
         internal string PutLeftSide(int id)
         {
-            return string.Format("{0}/diff/{1}/left", _baseAddress, id);
+            return string.Format("{0}/diff/{1}/left", BaseAddress, id);
         }
 
         internal string PutRightSide(int id)
         {
-            return string.Format("{0}/diff/{1}/right", _baseAddress, id);
+            return string.Format("{0}/diff/{1}/right", BaseAddress, id);
         }
     }
 }
