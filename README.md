@@ -7,10 +7,10 @@ Here's a list of perks that have been used:
 - Namespaces versioning for controllers with the same name: 
 
 For example, using this aproach we can have two DiffController classes.
-One in V1 namespace, other in V2 namespace and routing will be like:
+One in V1 namespace, other in V2 namespace and URLs will be like:
 
-    http://localhost:someport/v1/diff/1         V1.DiffController.Get method
-    http://localhost:someport/v2/diff/1         V2.DiffController.Get method
+    http://localhost:52627/v1/diff/1         V1.DiffController.Get method
+    http://localhost:52627/v2/diff/1         V2.DiffController.Get method
 
 - Castle Windsor DI container.
 - OWIN as Self-Hosting environment for integration tests.
@@ -27,6 +27,7 @@ Files and directories:
       RESTPlayground01.Tests/                  Unit tests
       RESTPlayground01/                        Web API service application 
       README                                   this file
+      RESTPlayground01.sln                     the solution file
 
 
 REQUIREMENTS
@@ -40,7 +41,7 @@ IMPORTANT!!! QUICK START
 ------------------------
 
 Visual Studio has to be started as Administrator, 
-otherwise integration tests can't run. Theb build the solution.
+otherwise integration tests can't run.
 
 Within Visual Studio you can run:
 
