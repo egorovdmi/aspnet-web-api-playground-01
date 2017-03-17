@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body style="padding:20px">
+    <p>Web API service has started.</p>
+    <blockquote>
+        <p>Sample input/output:</p>
+    </blockquote>
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <td>
+                            <p>End-point</p>
+                        </td>
+                        <td>
+                            <p>Request</p>
+                        </td>
+                        <td>
+                            <p>Response</p>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <p>1</p>
+                        </td>
+                        <td>
+                            <p>GET /v1/diff/1</p>
+                        </td>
+                        <td>
+                            <p>404 Not Found</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>2</p>
+                        </td>
+                        <td>
+                            <p>PUT /v1/diff/1/left<br />{<br /> "data": "AAAAAA=="<br />}</p>
+                        </td>
+                        <td>
+                            <p>201 Created</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>3</p>
+                        </td>
+                        <td>
+                            <p>GET /v1/diff/1</p>
+                        </td>
+                        <td>
+                            <p>404 Not Found</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>4</p>
+                        </td>
+                        <td>
+                            <p>PUT /v1/diff/1/right<br />{<br /> "data": "AAAAAA=="<br />}</p>
+                        </td>
+                        <td>
+                            <p>201 Created</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>5</p>
+                        </td>
+                        <td>
+                            <p>GET /v1/diff/1</p>
+                        </td>
+                        <td>
+                            <p>200 OK<br />{<br /> "diffResultType": "Equals"<br />}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>6</p>
+                        </td>
+                        <td>
+                            <p>PUT /v1/diff/1/right<br />{<br /> "data": "AQABAQ=="<br />}</p>
+                        </td>
+                        <td>
+                            <p>201 Created</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>7</p>
+                        </td>
+                        <td>
+                            <p>GET /v1/diff/1</p>
+                        </td>
+                        <td>
+                            <p>200 OK<br />{<br /> "diffResultType": "ContentDoNotMatch",<br /> "diffs": [<br /> {<br /> "offset": 0,<br /> "length": 1<br /> },<br /> {<br /> "offset": 2,<br /> "length": 2<br /> }<br /> ]<br />}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>8</p>
+                        </td>
+                        <td>
+                            <p>PUT /v1/diff/1/left<br />{<br /> "data": "AAA="<br />}</p>
+                        </td>
+                        <td>
+                            <p>201 Created</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>9</p>
+                        </td>
+                        <td>
+                            <p>GET /v1/diff/1</p>
+                        </td>
+                        <td>
+                            <p>200 OK<br />{<br /> "diffResultType": "SizeDoNotMatch"<br />}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>10</p>
+                        </td>
+                        <td>
+                            <p>PUT /v1/diff/1/left<br />{<br /> "data": null<br />}</p>
+                        </td>
+                        <td>
+                            <p>400 Bad Request</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
