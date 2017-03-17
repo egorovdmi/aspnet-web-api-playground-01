@@ -34,6 +34,7 @@ REQUIREMENTS
 ------------
 
 - Visual Studio 2013/2015.
+- .NET Framework 4.5.
 - Internet access for packages downloading.
 
 
